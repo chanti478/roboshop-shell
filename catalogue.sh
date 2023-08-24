@@ -8,6 +8,7 @@ LOGFILE=$LOGSDIR/$0-$DATE.log
 USERID=$(id -u)
 
 R="\e[31m"
+G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 
@@ -57,9 +58,9 @@ unzip /tmp/catalogue.zip &>>$LOGFILE
 
 VALIDATE $? "unzipping catalogue folder"
 
-cd /app &>>$LOGFILE
+#cd /app &>>$LOGFILE
 
-VALIDATE $? "moving back to app dir"
+#VALIDATE $? "moving back to app dir"
 
 npm install &>>$LOGFILE
 
@@ -85,7 +86,7 @@ systemctl start catalogue &>>$LOGFILE
 VALIDATE $? "start catalogue"
 
 
-cp /home/devops/daws-74s/repos/roboshop-shell//etc/yum.repos.d/mongo.repo &>>$LOGFILE
+cp /home/devops/daws-74s/repos/roboshop-shell/mongo.repo etc/yum.repos.d/mongo.repo &>>$LOGFILE
 
 VALIDATE $? "copying Mongo repo"
 
@@ -93,6 +94,6 @@ yum install mongodb-org-shell -y &>>$LOGFILE
 
 VALIDATE $? "installing mongo client"
 
-mongo --host mongoDB.joindevops.online </app/schema/catalogue.js &>>$LOGFILE
+mongo --host mongodb.joindevops.online </app/schema/catalogue.js &>>$LOGFILE
 
 VALIDATE $? "loading catalogue data in to mongodb"
