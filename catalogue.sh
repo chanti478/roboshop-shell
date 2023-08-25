@@ -68,7 +68,7 @@ VALIDATE $? "Installing dependencies"
 
 # give full path of catalog.service because we are inside /app dir
 
-cp /home/devops/daws-74s/repos/roboshop-shell/catalog.service /etc/systemd/system/catalogue.service  &>>$LOGFILE
+cp /home/centos/roboshop-shell/catalog.service /etc/systemd/system/catalogue.service  &>>$LOGFILE
 
 VALIDATE $? "copying catalogue.service"
 
@@ -86,7 +86,7 @@ systemctl start catalogue &>>$LOGFILE
 VALIDATE $? "start catalogue"
 
 
-cp /home/devops/daws-74s/repos/roboshop-shell/mongo.repo etc/yum.repos.d/mongo.repo &>>$LOGFILE
+cp /home/centos/roboshop-shell/mongo.repo etc/yum.repos.d/mongo.repo &>>$LOGFILE
 
 VALIDATE $? "copying Mongo repo"
 
