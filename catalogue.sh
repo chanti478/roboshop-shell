@@ -68,7 +68,7 @@ VALIDATE $? "Installing dependencies"
 
 # give full path of catalog.service because we are inside /app dir
 
-cp /home/devops/daws-74s/repos/roboshop-shell/catalog.service /etc/systemd/system/catalogue.service &>>$LOGFILE
+cp /home/devops/daws-74s/repos/roboshop-shell/catalog.service /etc/systemd/system/catalogue.service  &>>$LOGFILE
 
 VALIDATE $? "copying catalogue.service"
 
