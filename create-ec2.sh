@@ -4,7 +4,7 @@ NAMES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping"
 INSTANCE_TYPE=""
 IMAGE_ID=ami-03265a0778a880afb
 SECURITY_GROUP_ID=sg-0486e34cb496ac651
-DOMAIN_NAME=joindevops.online
+DOMAIN_NAME=chanti478mail.in
 
 # if mysql or mongodb instance_type should be t3.medium, but all others is t2,micro
 
