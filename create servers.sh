@@ -1,14 +1,15 @@
 #!/bin/bash
 
-NAMES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
+NAMES=$@
 INSTANCE_TYPE=""
 IMAGE_ID=ami-03265a0778a880afb
 SECURITY_GROUP_ID=sg-0486e34cb496ac651
 DOMAIN_NAME=chanti478mail.in
+HOSTED_ZONE_ID=Z0856705XOSJKVEOO20B
 
 # if mysql or mongodb instance_type should be t3.medium, but all others is t2,micro
 
-for i in "${NAMES[@]}"
+for i in $@
 do
     if [[ $i == "mongodb" || $i == "mysql" ]]
     then
@@ -23,7 +24,7 @@ do
     
     echo "created $i instance: $IP_ADDRESS"
     
-    aws route53 change-resource-record-sets --hosted-zone-id Z0856705XOSJKVEOO20B --change-batch '
+    aws route53 change-resource-record-sets --hosted-zone-id $HOSTED_ZONE_ID --change-batch '
 
    {
           "Comment": "CREATE/DELETE/UPSERT a record ",
