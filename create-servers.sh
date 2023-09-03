@@ -4,7 +4,7 @@ NAMES=$@
 INSTANCE_TYPE=""
 IMAGE_ID=ami-03265a0778a880afb
 SECURITY_GROUP_ID=sg-0486e34cb496ac651
-DOMAIN_NAME=chanti478mail.in
+DOMAIN_NAME=joindevops.online
 HOSTED_ZONE_ID=Z0856705XOSJKVEOO20B
 
 # if mysql or mongodb instance_type should be t3.medium, but all others is t2,micro
@@ -31,11 +31,11 @@ do
           "Changes": [{
             "Action": "CREATE",
                        "ResourceRecordSet": {
-                                    "Name": "'$i.$DOMAIN_NAME'",
-                                    "Type": "A",
-                                    "TTL": 300,
-                                 "ResourceRecords": [{ "Value": "'$IP_ADDRESS'"}]
-                                }}]
+                            "Name": "'$i.$DOMAIN_NAME'",
+                            "Type": "A",
+                            "TTL": 300,
+                            "ResourceRecords": [{ "Value": "'$IP_ADDRESS'"}]
+                        }}]
    }
    '
 done
